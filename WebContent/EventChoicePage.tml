@@ -1,0 +1,845 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+	<title>WESO Event Choice</title>
+	<script type="text/javascript" language="JavaScript"> 
+// <!--	
+	function clearradio(f,rad) { 
+		for (var i = 0; i < f.elements[rad].length; i++) { 
+		f.elements[rad][i].checked = false; 
+	} 
+} 
+// -->
+</script> 
+</head>
+<body>
+<div id="student_box">
+<h2>
+	Student Event Selection for ${wesoState.currentStudent.firstName} ${wesoState.currentStudent.lastName}
+</h2>
+<t:form t:id="eventChoicePageId">
+	<t:errors />
+	<label style="color: red; font-weight: bold;">${errorMessage}</label>
+	<table>
+		<tr>
+			<td>Student Name:</td>
+			<td><b>${wesoState.currentStudent.firstName}</b></td>
+			<td><b>${wesoState.currentStudent.lastName}</b></td>
+		</tr>
+		<tr>
+			<td>Grade:</td>
+			<td>${wesoState.currentStudent.grade.gradeDesc}</td>
+		</tr>
+		<tr>
+			<td>Teacher:</td>
+			<td>
+				<select t:type="select" t:model="teachers" t:value="teacher">
+				</select>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Maximum # of Events:</td>
+			<td>
+			<t:radiogroup t:value="numberOfEvents">
+				<input type="radio" t:type="radio" t:value="numberOfEvents.zero"/>0
+				<input type="radio" t:type="radio" t:value="numberOfEvents.one"/>1
+				<input type="radio" t:type="radio" t:value="numberOfEvents.two"/>2
+				<input type="radio" t:type="radio" t:value="numberOfEvents.three"/>3
+			</t:radiogroup>
+			</td>
+			<td></td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td>Event Choices:</td>
+			<td align="center">Ranking</td>
+			<td width="50" align="right">Alternate</td>
+		</tr>
+		<t:if test="isSecondGrade">
+			<tr>
+				<td>A is for Anatomy</td>
+				<td>
+					<t:radiogroup t:value="anatomyChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="anatomyAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Barge Building</td>
+				<td>
+					<t:radiogroup t:value="bargeChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="bargeAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Estimania</td>
+				<td>
+					<t:radiogroup t:value="estimChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="estimAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Map Reading</td>
+				<td>
+					<t:radiogroup t:value="mapReading">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="mapAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Monster Match</td>
+				<td>
+					<t:radiogroup t:value="monsterMatch">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="monsterAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Mystery Architecture</td>
+				<td>
+					<t:radiogroup t:value="mystArch">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="mystAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Pentathlon</td>
+				<td>
+					<t:radiogroup t:value="pentaChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="pentaAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Puff Mobiles</td>
+				<td>
+					<t:radiogroup t:value="puffChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="puffAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Rock Hound</td>
+				<td>
+					<t:radiogroup t:value="rockChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="rockAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Sink or Float</td>
+				<td>
+					<t:radiogroup t:value="sinkOrFloat">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="sinkAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>What Went By</td>
+				<td>
+					<t:radiogroup t:value="whatWentBy">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="whatAlt"/>
+				</td>
+			</tr>
+		</t:if>
+		<t:if test="isThirdGrade">
+			<tr>
+				<td>A is for Anatomy</td>
+				<td>
+					<t:radiogroup t:value="anatomyChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="anatomyAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Estimania</td>
+				<td>
+					<t:radiogroup t:value="estimChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="estimAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Map Reading</td>
+				<td>
+					<t:radiogroup t:value="mapReading">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="mapAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Mystery Architecture</td>
+				<td>
+					<t:radiogroup t:value="mystArch">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="mystAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Pentathlon</td>
+				<td>
+					<t:radiogroup t:value="pentaChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="pentaAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Puff Mobiles</td>
+				<td>
+					<t:radiogroup t:value="puffChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="puffAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Rock Hound</td>
+				<td>
+					<t:radiogroup t:value="rockChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="rockAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Straw Tower</td>
+				<td>
+					<t:radiogroup t:value="strawTower">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="strawAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Water Rockets</td>
+				<td>
+					<t:radiogroup t:value="waterRockets">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="waterAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>What Went By</td>
+				<td>
+					<t:radiogroup t:value="whatWentBy">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="whatAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Write It, Build It</td>
+				<td>
+					<t:radiogroup t:value="writeItBuildIt">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="writeAlt"/>
+				</td>
+			</tr>
+		</t:if>
+			<t:if test="isFourthGrade">
+			<tr>
+				<td>A is for Anatomy</td>
+				<td>
+					<t:radiogroup t:value="anatomyChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="anatomyAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Chopper Challenge</td>
+				<td>
+					<t:radiogroup t:value="chopperChallenge">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="chopperAlt"/>
+				</td>
+			</tr>
+			<tr>
+			<td>Circuit Wizardry</td>
+				<td>
+					<t:radiogroup t:value="circuitWizardy">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="circuitAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Estimania</td>
+				<td>
+					<t:radiogroup t:value="estimChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="estimAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Map Reading</td>
+				<td>
+					<t:radiogroup t:value="mapReading">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="mapAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Mystery Architecture</td>
+				<td>
+					<t:radiogroup t:value="mystArch">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="mystAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Pentathlon</td>
+				<td>
+					<t:radiogroup t:value="pentaChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="pentaAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Rock Hound</td>
+				<td>
+					<t:radiogroup t:value="rockChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="rockAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Science Jeopardy</td>
+				<td>
+					<t:radiogroup t:value="scienceJeopardy">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="scienceAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Straw Tower</td>
+				<td>
+					<t:radiogroup t:value="strawTower">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="strawAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Water Rockets</td>
+				<td>
+					<t:radiogroup t:value="waterRockets">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="waterAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Write It, Build It</td>
+				<td>
+					<t:radiogroup t:value="writeItBuildIt">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="writeAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Potions</td>
+				<td>
+					<t:radiogroup t:value="tbdChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="tbdAlt"/>
+				</td>
+			</tr>
+			</t:if>
+			<t:if test="isFifthGrade">
+			<tr>
+				<td>A is for Anatomy</td>
+				<td>
+					<t:radiogroup t:value="anatomyChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="anatomyAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Chopper Challenge</td>
+				<td>
+					<t:radiogroup t:value="chopperChallenge">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="chopperAlt"/>
+				</td>
+			</tr>
+			<tr>
+			<td>Circuit Wizardry</td>
+				<td>
+					<t:radiogroup t:value="circuitWizardy">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="circuitAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Estimania</td>
+				<td>
+					<t:radiogroup t:value="estimChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="estimAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Map Reading</td>
+				<td>
+					<t:radiogroup t:value="mapReading">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="mapAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Mystery Architecture</td>
+				<td>
+					<t:radiogroup t:value="mystArch">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="mystAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Pentathlon</td>
+				<td>
+					<t:radiogroup t:value="pentaChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="pentaAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Rock Hound</td>
+				<td>
+					<t:radiogroup t:value="rockChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="rockAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Science Jeopardy</td>
+				<td>
+					<t:radiogroup t:value="scienceJeopardy">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="scienceAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Straw Tower</td>
+				<td>
+					<t:radiogroup t:value="strawTower">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="strawAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Water Rockets</td>
+				<td>
+					<t:radiogroup t:value="waterRockets">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="waterAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Write It, Build It</td>
+				<td>
+					<t:radiogroup t:value="writeItBuildIt">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="writeAlt"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Potions</td>
+				<td>
+					<t:radiogroup t:value="tbdChoice">
+						<input type="radio" t:type="radio" t:value="First"/>1st
+						<input type="radio" t:type="radio" t:value="Second"/>2nd
+						<input type="radio" t:type="radio" t:value="Third"/>3rd
+						<input type="radio" t:type="radio" t:value="Fourth"/>4th
+						<input type="radio" t:type="radio" t:value="Fifth"/>5th
+						<input type="radio" t:type="radio" t:value="OK"/>OK
+						<input type="radio" t:type="radio" t:value="No"/>NO
+					</t:radiogroup>
+				</td>
+				<td width="20" align="center"> <input t:type="checkbox" value="tbdAlt"/>
+				</td>
+			</tr>
+			</t:if>
+		<tr>
+			<td><input t:id="addStudent" t:type="Submit" t:value="Add Another Student"
+				class="login_submit" /></td>
+			<td><input t:id="contactInfo" t:type="Submit" t:value="Contact Info"
+				class="login_submit" /></td>
+		</tr>
+	</table>
+</t:form>
+</div>
+</body>
+</html>

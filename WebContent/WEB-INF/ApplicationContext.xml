@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="guardianManagerTarget" class="org.weso.sor.service.impl.GuardianManagerImpl">
+		<property name="guardianDao">
+			<ref bean="guardianDao" />
+		</property>
+	</bean>
+	
+	<bean id="gradeListTarget" class="org.weso.sor.service.impl.GradeListImpl">
+		<property name="gradesDao">
+			<ref bean="gradesDao" />
+		</property>
+	</bean>
+	
+	<bean id="teacherListTarget" class="org.weso.sor.service.impl.TeacherListImpl">
+		<property name="teacherDao">
+			<ref bean="teacherDao" />
+		</property>
+	</bean>
+	
+	<bean id="studentManagerTarget" class="org.weso.sor.service.impl.StudentManagerImpl">
+		<property name="studentDao">
+			<ref bean="studentDao" />
+		</property>
+	</bean>
+	
+	<bean id="eventChoiceListTarget" class="org.weso.sor.service.impl.EventChoiceListImpl">
+		<property name="eventsDao">
+			<ref bean="eventsDao" />
+		</property>
+	</bean>
+	
+	<bean id="volunteerManagerTarget" class="org.weso.sor.service.impl.VolunteerManagerImpl">
+		<property name="volunteerActivitiesDao">
+			<ref bean="volunteerActivitiesDao" />
+		</property>
+	</bean>
+
+	<bean id="guardianManager" parent="transactionProxy">
+		<property name="target">
+			<ref bean="guardianManagerTarget" />
+		</property>
+		<property name="transactionAttributeSource">
+			<bean class="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource" />
+		</property>
+	</bean>
+	
+	<bean id="gradeList" parent="transactionProxy">
+		<property name="target">
+			<ref bean="gradeListTarget" />
+		</property>
+		<property name="transactionAttributeSource">
+			<bean
+				class="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource" />
+		</property>
+	</bean>
+	
+	<bean id="teacherList" parent="transactionProxy">
+		<property name="target">
+			<ref bean="teacherListTarget" />
+		</property>
+		<property name="transactionAttributeSource">
+			<bean
+				class="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource" />
+		</property>
+	</bean>
+
+	<bean id="studentManager" parent="transactionProxy">
+		<property name="target">
+			<ref bean="studentManagerTarget" />
+		</property>
+		<property name="transactionAttributeSource">
+			<bean
+				class="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource" />
+		</property>
+	</bean>
+
+	<bean id="eventChoiceList" parent="transactionProxy">
+		<property name="target">
+			<ref bean="eventChoiceListTarget" />
+		</property>
+		<property name="transactionAttributeSource">
+			<bean
+				class="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource" />
+		</property>
+	</bean>
+	
+	<bean id="volunteerManager" parent="transactionProxy">
+		<property name="target">
+			<ref bean="volunteerManagerTarget" />
+		</property>
+		<property name="transactionAttributeSource">
+			<bean
+				class="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource" />
+		</property>
+	</bean>
+	
+
+</beans>

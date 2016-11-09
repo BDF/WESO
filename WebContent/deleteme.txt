@@ -1,0 +1,170 @@
+			<td><t:radiogroup t:value="banquetCleanupOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="banquetCleanupTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="banquetSetupOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="banquetSetupTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="eventAndAssistentCoachOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="eventAndAssistentCoachTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="eventDayAfterOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="eventDayAfterTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="eventDayMorningOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="eventDayAfterTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="homeroomFunOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="homeroomFunTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="homeroomCleanOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="homeroomCleanTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="homeroomCopyingOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="homeroomCopyingTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="homeroomCreationOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="homeroomCreationTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="homeroomParentOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="homeroomParentTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="homeroomSetOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="homeroomSetTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="lakewoodBannerOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="lakewoodBannerTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="nametagsOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="nametagsTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="catcherOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="catcherTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="bookletOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="bookletTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="tShirtsOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="tShirtsTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="wesoHelperOneChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>
+			<td><t:radiogroup t:value="wesoHelperTwoChoice">
+				<input type="radio" t:type="radio" t:value="Yes" />Yes
+					<input type="radio" t:type="radio" t:value="Ok" />OK
+					<input type="radio" t:type="radio" t:value="No" />No
+				</t:radiogroup></td>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.password">weso#34</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/weso</property>
+		<property name="hibernate.connection.username">WesoApp</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<mapping class="org.weso.sor.model.Events" />
+		<mapping class="org.weso.sor.model.EventToGrade" />
+		<mapping class="org.weso.sor.model.Grade" />
+		<mapping class="org.weso.sor.model.Guardian" />
+		<mapping class="org.weso.sor.model.GuardianEventChoices" />
+		<mapping class="org.weso.sor.model.GuardianVolunteerChoices" />
+		<mapping class="org.weso.sor.model.Student" />
+		<mapping class="org.weso.sor.model.StudentEventChoices" />
+		<mapping class="org.weso.sor.model.StudentToGuardian" />
+		<mapping class="org.weso.sor.model.Teacher" />
+		<mapping class="org.weso.sor.model.TeacherToGrade" />
+		<mapping class="org.weso.sor.model.VolunteerActivities" />
+	</session-factory>
+</hibernate-configuration>

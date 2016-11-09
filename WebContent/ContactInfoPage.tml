@@ -1,0 +1,95 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+<title>Contact Information</title>
+</head>
+<body>
+<div id="registration_box">
+<form t:type="form" t:id="formTest"><t:errors /> <label
+	style="color: red; font-weight: bold;">${errorMessage}</label>
+<table>
+	<tr>
+		<td colspan="2" align="center"><b>Parent One</b></td>
+		<td colspan="2" align="center"><b>Parent Two</b></td>
+	</tr>
+	<tr>
+		<td><label t:type="Label" for="lastName"></label></td>
+		<td><input t:type="TextField" t:id="lastName" t:value="lastName" /></td>
+		<td><label>Last Name:</label></td>
+		<td><input t:type="TextField" t:id="lastName2"
+			t:value="lastNameSecondary" /></td>
+	</tr>
+	<tr>
+		<td><label t:type="Label" for="firstName"></label></td>
+		<td><input t:type="TextField" t:id="firstName"
+			t:value="firstName" /></td>
+		<td><label>First Name</label></td>
+		<td><input t:type="TextField" t:id="firstName2"
+			t:value="firstNameSecondary" /></td>
+	</tr>
+	<tr>
+		<td><label t:type="Label" for="primaryEmail"></label></td>
+		<td><input t:type="TextField" t:id="primaryEmail"
+			t:value="primaryEmail" /></td>
+		<td><label>Primary EMail</label></td>
+		<td><input t:type="TextField" t:id="primaryEmail2"
+			t:value="primaryEmailSecondary" /></td>
+	</tr>
+	<tr>
+		<td><label t:type="Label" for="secondaryEmail"></label></td>
+		<td><input t:type="TextField" t:id="secondaryEmail"
+			t:value="secondaryEmail" /></td>
+		<td><label>Secondary EMail</label></td>
+		<td><input t:type="TextField" t:id="secondaryEmail2"
+			t:value="secondaryEmailSecondary" /></td>
+	</tr>
+	<tr>
+		<td><label>Primary Phone Number:<br />
+		</label></td>
+		<td><input size="16" t:type="TextField" t:id="primaryLineNumber"
+			t:value="primaryLineNumber" /></td>
+		<td><label>Primary Phone Number:<br />
+		</label></td>
+		<td><input size="16" t:type="TextField" t:id="primaryLineNumber2"
+			t:value="primaryLineNumberSecondary" /></td>
+	</tr>
+	<tr>
+		<td><label>Secondary Phone Number:
+		</label></td>
+		<td><input size="16" t:type="TextField"
+			t:id="secondaryLineNumber" t:value="secondaryLineNumber" /></td>
+		<td><label>Secondary Phone Number:<br />
+		</label></td>
+		<td><input size="16" t:type="TextField"
+			t:id="secondaryLineNumber2" t:value="secondaryLineNumberSecondary" />
+		</td>
+	</tr>
+	<tr>
+		<td>T-Shirt Size:</td>
+		<td><select t:type="select" t:model="tShirtSizes"
+			t:value="tShirt">
+		</select></td>
+		<td>T-Shirt Size:</td>
+		<td><select t:type="select" t:model="tShirtSizes"
+			t:value="tShirtSecondary">
+		</select></td>
+	</tr>
+</table>
+<br></br>
+<label><b>Photo Permission</b></label>
+<br></br> 
+WESO has informed us that some photos or videos may be taken on competition day and<br></br> 
+used on the official website, in preparation of fundraising material, and/or in videos<br></br> 
+or photo presentations to advertise Science Olympiad. WESO is one of the largest events<br></br> 
+in the nation and it did draw national attention last year. <br></br>
+WESO assumes your consent, unless specifically stated otherwise. <br></br>
+Please let us know if WESO does not have your consent and we will let them know.<br></br> 
+Select one of the two options:
+<br></br>
+<select
+	t:type="select" t:model="yesNoModel" t:value="yesNoPhotos">
+</select> <br></br>
+<input t:id="submitform" t:type="Submit" t:value="Goto Next Page"
+	class="login_submit" /></form>
+</div>
+</body>
+</html>

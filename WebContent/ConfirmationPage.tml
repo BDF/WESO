@@ -1,0 +1,33 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+<title>WESO Confirmation Page</title>
+</head>
+<body>
+<div id="confirmation_box"><t:form>
+	<t:errors />
+	<label style="color: red; font-weight: bold;">${errorMessage}</label>
+	<table>
+		<tr>
+			<td><b>Opportunity</b></td>
+			<td>First Page</td>
+			<td> | </td>
+			<td>Second Parent</td>
+		</tr>
+		<tr>
+			<t:grid t:source="students" t:row="student">
+			<t:parameter name="studentNameCell">
+				<a t:type="pagelink" 
+					t:page="StudentPage" 
+					t:context="student.studentName" href="#">${student.studentName}</a>				
+			</t:parameter>
+			</t:grid>
+			
+		</tr>
+		<tr>
+			<td><input t:id="submitform" t:type="Submit"
+				t:value="Finished" class="login_submit" /></td>
+		</tr>
+	</table>
+</t:form></div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <head>
+        <title>Children Entry</title>
+    </head>
+    <body>
+        <h1>Children Entry</h1>
+
+        <p> You succeeded in entering a guardian. </p>
+        <p>
+            [<t:pagelink t:page="InitialPage">Add Another Guardian</t:pagelink>]
+        </p>
+    </body>
+</html>

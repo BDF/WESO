@@ -1,0 +1,47 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+	<title>WESO Student</title>
+</head>
+<body>
+<div id="student_box"><t:form>
+	<t:errors />
+	<label style="color: red; font-weight: bold;">${errorMessage}</label>
+	<table>
+		<tr>
+			<td><label t:type="Label" for="firstName" ></label></td>
+			<td><input t:type="TextField" t:id="firstName" t:value="firstName" /></td>
+		</tr>
+		<tr>
+			<td><label t:type="Label" for="lastName"></label></td>
+			<td><input t:type="TextField" t:id="lastName" t:value="lastName" /></td>
+		</tr>
+		<tr>
+			<td>Grade:</td>
+			<td>
+				<select t:type="select" t:model="grades" t:value="grade">
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Phone Number:<br/></label></td>
+			<td>
+				<input t:type="TextField" t:id="lineNumber" t:value="lineNumber"  t:validate="required"/>
+			</td>
+		</tr>
+		<tr>
+			<td>T-Shirt Size:</td>
+			<td>
+				<select t:type="select" t:model="tShirtSizes" t:value="tShirt">
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td><input t:id="submitform" 
+				t:type="Submit" 
+				t:value="Goto Next Page"
+				class="login_submit" /></td>
+		</tr>
+	</table>
+</t:form></div>
+</body>
+</html>
