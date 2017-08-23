@@ -6,7 +6,7 @@
 		<!--<url>jdbc:hsqldb:mem:@[your jdbc connection parameters]</url>-->
 		<!--<url>jdbc:mysql://localhost:3306/MNEMONICS</url>-->
 		<url>jdbc:mysql://localhost:3306</url>
-		<user>sa</user>
+		<user></user>
 		<password></password>
 
 		<!-- You can also pass user/password and other JDBC properties in the optional properties tag: -->
@@ -17,7 +17,7 @@
 					</property>
 					<property>
 						<key>password</key>
-						<value>test</value>
+						<value></value>
 					</property>
 				</properties>-->
 	</jdbc>
@@ -91,7 +91,7 @@
 			<packageName>com.proquest.pqd.canon.dao.jooq</packageName>
 
 			<!-- The destination directory of your generated classes -->
-			<directory>/Users/bforeste/software/pq/ia/PQ-CanonFields/src/main/java</directory>
+			<directory>/Users/bforeste/software/java/weso</directory>
 		</target>
 	</generator>
 </configuration>
